@@ -12,3 +12,99 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    color: white;
+    font-size: 13px;
+}
+
+header{
+    width: 100vw;
+    position: fixed;
+    height: 45px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center
+}
+
+h1 {
+    color: rgb(42, 171, 226);
+    font-size: 20px;
+}
+
+.question-mark{
+    background-color: rgb(42, 171, 226);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 2;
+}
+.question-mark p{
+    font-size: 14px;
+}
+footer{
+    height: 40px;
+    width: 100vw;
+    background-color: rgb(42, 171, 226);
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+.footer-text{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.right-side{
+    width: 33vw;
+    height: 80vh;
+    margin-top: 80px;
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.right-side .user-info{
+    height: 215px;
+    width: 200px;
+    border-radius: 3%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 30px lightgray;
+}
+
+.user-info img{
+    height: 140px;
+    width: 140px;
+    margin-top: 10px;
+}
+
+.article-list{
+    color: black;
+}
