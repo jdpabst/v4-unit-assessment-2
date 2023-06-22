@@ -15,6 +15,8 @@ the font is called 'nunito' and can be found on google fonts
 body{
     margin: 0;
     padding: 0;
+    position: relative;
+    min-height: 100%;
 }
 
 ul {
@@ -36,7 +38,13 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    align-items: center
+    align-items: center;
+    z-index: 1;
+}
+
+main{
+    width: 100vw;
+    position: relative;
 }
 
 h1 {
@@ -61,37 +69,31 @@ h1 {
 .question-mark p{
     font-size: 14px;
 }
-footer{
-    height: 40px;
-    width: 100vw;
-    background-color: rgb(42, 171, 226);
-    position: absolute;
-    bottom: 0px;
+
+.main-content-container{
     display: flex;
-    align-items: center;
 }
-.footer-text{
-    font-size: 13px;
-    margin-left: 10px;
+
+.left-side{
+    width: 50vw;
+    margin-top: 80px;
+    margin-left: 60px;
+    /* border: 1px solid black; */
 }
 
 .right-side{
     width: 33vw;
-    height: 80vh;
     margin-top: 80px;
-    /* border: 1px solid black; */
-    position: absolute;
-    right: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    height: 550px;
 }
 .right-side .user-info{
-    height: 215px;
+    height: 205px;
     width: 200px;
     border-radius: 3%;
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -100,11 +102,85 @@ footer{
 }
 
 .user-info img{
-    height: 140px;
-    width: 140px;
+    height: 130px;
+    width: 130px;
     margin-top: 10px;
+    margin-bottom: -15px;
+}
+
+.user-info p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: px;
+}
+
+.popular-articles{
+    box-shadow: 0 0 30px lightgray;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 290px;
+    width: 200px;
+}
+.popular-articles h2{
+    font-size: 16px;
+    margin: 0 auto;
+    margin-bottom: -40px;
 }
 
 .article-list{
     color: black;
+    font-size: 12.5px;
+    line-height: 22px;
+    margin-bottom: 0;
 }
+
+.group-2{
+    height: 300px;
+}
+
+.group-2 h4{
+    font-size: 14px;
+}
+
+.group-2 p{
+    font-size: 10px;
+    color: rgb(42, 171, 226);
+    float: right;
+}
+.image-gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.image-gallery img{
+    height: 90px;
+}
+
+footer{
+    width: 100%;
+    height: 40px; 
+    background-color: rgb(42, 171, 226);
+    display: flex;
+    align-items: center;
+}
+
+.footer-text{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 40px;    /* Footer height */
+  }
