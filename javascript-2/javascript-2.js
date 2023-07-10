@@ -35,7 +35,10 @@ let foods = [
   and then adding the results together. 
 */
 
-//CODE HERE
+foods.forEach(function(element, index, arr){
+  element.calories = element.carbs + element.protein + element.fat;
+  return arr
+})
 
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
@@ -80,8 +83,10 @@ const products = [
   Save the copy to a new variable called 'saleProducts'.
 */
 
-//CODE HERE
-
+let saleProducts = products.map(({name, color, price}) => {
+  price = price - (price * 0.25);
+  return {name, color, price}
+})
 ////////////////////PROBLEM 3////////////////////
 /*
   A customer has placed an order - they want one of every product that has blue on it. 
@@ -90,8 +95,7 @@ const products = [
   (Hint: look up the array method 'includes' on MDN)
 */
 
-//CODE HERE
-
+let blueProducts = saleProducts.filter(product => product.color.includes('blue'))
 ////////////////////PROBLEM 4////////////////////
 /*
   Now you'd like to get them their order total. 
@@ -99,7 +103,7 @@ const products = [
   Save the result to a variable called orderTotal.
 */
 
-//CODE HERE
+let orderTotal = blueProducts.reduce((acc, val) => acc + val.price, 0)
 
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
@@ -129,7 +133,7 @@ const shippingInfo = {
   that combines the contactInfo and shippingInfo objects.
 */
 
-//CODE HERE
+let helensInfo = Object.assign(contactInfo, shippingInfo)
 
 ////////////////////PROBLEM 6////////////////////
 /*
@@ -138,14 +142,14 @@ const shippingInfo = {
   Overwrite the name property to 'Ellen' and the email address to 'ellen@email.com'.
 */
 
-//CODE HERE
+let ellensInfo = {...helensInfo, name:"Ellen", email:"ellen@email.com"}
 
 ////////////////////PROBLEM 7////////////////////
 /* 
   Save Ellen's email to a new variable using destructuring.
 */
 
-//CODE HERE
+let { email } = ellensInfo;
 
 ////////////////////PROBLEM 8////////////////////
 /*
@@ -153,7 +157,7 @@ const shippingInfo = {
   from shippingInfo to new variables using destructuring.
 */
 
-//CODE HERE
+let { zipCode, state } = shippingInfo;
 
 //////////////////////////////////PROBLEMS 9-11//////////////////////////////////
 /*
@@ -215,15 +219,18 @@ const userInfo = {
   using dot notation.
 */
 
-//CODE HERE
+let shouldAlert = userInfo.settings.alerts;
 
 ////////////////////PROBLEM 10////////////////////
 /*
   Set the value of topic below to the last item in gn@rly_c0der_007's topics array
   using dot and/or bracket notation.
 */
+// They wanted the actual number of the item in the array to be used, but I think the way below is a more accurate way to find the info they are asking for
+// let i = userInfo.topics.length-1;
+// let topic = userInfo.topics[i]
 
-//CODE HERE
+let topic = userInfo.topics[3]
 
 ////////////////////PROBLEM 11////////////////////
 /*
@@ -231,7 +238,7 @@ const userInfo = {
   gn@rly_c0der_007's 2nd comment using dot/bracket notation.
 */
 
-//CODE HERE
+let commenterId = userInfo.comments[1].responses[0].userId;
 
 ////////////////////PROBLEM 12////////////////////
 /*
@@ -250,7 +257,29 @@ const userInfo = {
       - create at least 2 kid objects
 */
 
-//CODE HERE
+let person = {
+  name: 'name',
+  age: 29,
+  jobs: ['cat mom', 'estate manager', 'chef'],
+  birthday: function(){
+    this.age += 1;
+  },
+  favorites: {
+    color: 'pink',
+    number: 4,
+    book: 'Book of Mormon',
+  },
+  kids: [{
+    name: 'Luna',
+    age: 6
+  }, {
+    name: 'Wynter',
+    age: 6
+  }, {
+    name: 'Link',
+    age: 1
+  }]
+}
 
 //////////////////////////////////PROBLEMS 13-14//////////////////////////////////
 /*
@@ -274,9 +303,9 @@ const workout = {
 }
 
 //let context1 = myFunc
-//let context1 = window
-//let context1 = global
-// let context1 = workout
+// let context1 = window
+// let context1 = global
+let context1 = workout
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -289,6 +318,6 @@ function myFunc() {
 }
 
 //let context2 = myFunc
-// let context2 = window
+let context2 = window
 //let context2 = global
 //let context2 = workout
